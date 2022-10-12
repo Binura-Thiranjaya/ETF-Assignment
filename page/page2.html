@@ -12,10 +12,10 @@
 </head>
 <script>
     $(document).ready(function(){
+        //JQuery Code 4
         $("#btn").click(function(){
             $("#div1").load("page1.html");
         });
-        //JQuery Code 4
         //AJAX hTTP Request
         $.getJSON('../data.json', function (data) {
                 $('#image1').append('<img class="mx-auto d-block w-50"   src="'+data[1].image+'" alt="First slide">');
