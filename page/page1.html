@@ -13,16 +13,16 @@
 <script>
     $(document).ready(function(){
         //JQuery Code 1
-      $("#image").click(function(){
+      $("#image1").click(function(){
         $(this).hide();
       });
         //JQuery Code 2
-        $("p").click(function(){
-            alert("The paragraph was clicked.");
+        $("#hide").click(function(){
+            alert("Click the Image Not Me");
         });
         //JQuery Code 3
-        $("#btn1").click(function(){
-            alert("Text: " + $("#test").text());
+        $("#image2").click(function(){
+            $("#image1").show();
         });
 
     });
@@ -41,21 +41,26 @@
                     <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./page/page2.html">Page 2</a>
+                    <a class="nav-link" href="../page/page2.html">Page 2</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./page/page3.html">Page 3</a>
+                    <a class="nav-link" href="../page/page3.html">Page 3</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
           <div class="card">
-            <img src="../image/image3.jpeg" alt="Image 3" id="image" width="500px" height="200px">
-            <p>Click Me to hide</p>
-            <input type="text" id="test">
-            <button id="btn1">Add Quantity</button>
+            <img id="image1" src="../image/image1.jpeg" alt="" style="height: 250px; padding-top: 1%;">
+            <p id="hide">Click Me to hide</p>
           </div>
+          <div class="card">
+            <img id="image2" src="../image/image2.jpeg" alt="" style="height: 250px; padding-top: 1%;">
+            <p id="show">Click Me to Show Hided Image</p>
+          </div>
+         <div class="card">
+          <img id="image3" src="../image/image3.jpeg" alt="" style="height: 250px; padding-top: 1%;">
+        </div>
         </div>
 </body>
 </html>

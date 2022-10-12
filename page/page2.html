@@ -4,9 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharini page 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <title>Tharini Page 2</title>
 </head>
+<script>
+    $(document).ready(function(){
+        $("#btn").click(function(){
+            $("#div1").load("page1.html");
+        });
+        //JQuery Code 4
+        //AJAX hTTP Request
+        $.getJSON('../data.json', function (data) {
+                $('#image1').append('<img class="mx-auto d-block w-50"   src="'+data[1].image+'" alt="First slide">');
+                $('#image2').append('<img class=" mx-auto d-block w-50"  src="'+data[2].image+'" alt="Second slide">');
+                $('#image3').append('<img class=" mx-auto d-block w-50"  src="'+data[0].image+'" alt="First slide">');
+        });
+    });
+    </script>
 <body>
-    
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html"><span class="logo">Tharini</span></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../page/page1.html">Page 1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../page/page3.html">Page 3</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <h1 class="text-center mt-1 text-uppercase">All Images</h1>
+          <div class="card">
+            <div id="image1" style="height: 250px; padding-top: 1%;"></div>
+          </div>
+          <div class="card">
+            <div id="image2" style="height: 250px;padding-top: 1%;"></div>
+          </div>
+         <div class="card">
+            <div id="image3" style="height: 250px;padding-top: 1%;"></div>
+          </div>
+        </div>
 </body>
 </html>
